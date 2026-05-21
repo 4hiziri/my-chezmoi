@@ -1,0 +1,19 @@
+location:Tokyo,JP
+fetch_cmd:curl -sf --connect-timeout 0.5
+units:metric
+symbols:true
+show_uvi:true
+show_wind:true
+show_humidity:true
+show_pressure:true
+show_daylight:true
+dateformat:%a %b %d
+timeformat:%b %d %r
+
+background:\x1b[48;2;220;220;220m
+greeting_text:@
+humidity_text:💦 
+pressure_text:🌀 
+sunrise_text:🌅 
+sunset_text:🌇 
+wind_text:༄ 

@@ -1,0 +1,9 @@
+diff:
+  pager: delta
+
+merge:
+  command: "emacs"
+  args:
+    - "-nw"
+    - "--eval"
+    - '(ediff-merge-files-with-ancestor \"{{ "{{" }} .Destination {{ "}}" }}\" \"{{ "{{" }} .Target {{ "}}" }}\" \"{{ "{{" }} .Source {{ "}}" }}\" nil \"{{ "{{" }} .Destination {{ "}}" }}\")'

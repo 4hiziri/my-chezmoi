@@ -1,0 +1,1 @@
+sudo ./lnxrouter --ap wlp0s20f3 <AP-NAME> -p <PASSWORD>

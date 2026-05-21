@@ -1,0 +1,193 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[templates]
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
+zre_add_cand = "{{ hooks?.pre | nl }}{% for file in files %}zre_add_cand \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
+
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins.zsh-colors]
+github = "Tarrasch/zsh-colors"
+
+[plugins.zsh-256color]
+github = "chrissicool/zsh-256color"
+
+[plugins.dircolors-solarized]
+github = "seebi/dircolors-solarized"
+
+[plugins.zsh-notify]
+github = "marzocchi/zsh-notify"
+
+[plugins.zsh-notify.hooks]
+pre = """
+if ! whence -p xdotool wmctrl notify-send 2>&1 > /dev/null; then
+   sudo apt install xdotool wmctrl libnotify-bin
+fi
+"""
+
+[plugins.fzf]
+github = "junegunn/fzf"
+dir    = "bin"
+apply  = ["PATH"]
+
+[plugins.zsh-dwim]
+github = "oknowton/zsh-dwim"
+
+[plugins.dracula-theme]
+github = "dracula/zsh-syntax-highlighting"
+
+[plugins.ansiweather]
+github = "fcambus/ansiweather"
+
+[plugins.colorize]
+github = "zpm-zsh/colorize"
+
+[plugins.zsh-command-not-found]
+github = "Freed-Wu/zsh-command-not-found"
+
+# [plugins.zsh-deja-vu]
+# github = "justyntemme/zsh-deja-vu"
+
+[plugins.enhancd]
+github = "babarot/enhancd"
+apply = ["defer"]
+
+[plugins.zsh-eza]
+github = "z-shell/zsh-eza"
+
+[plugins.zsh-smartinput]
+github = "momo-lab/zsh-smartinput"
+
+[plugins.smile]
+github = "fundor333/smile"
+
+[plugins.zsh-systemd]
+github = "le0me55i/zsh-systemd"
+
+[plugins.tipz]
+github = "molovo/tipz"
+
+[plugins.ugit]
+github = "Bhupesh-V/ugit"
+
+[plugins.zsh-url-highlighter]
+github = "ascii-soup/zsh-url-highlighter"
+
+[plugins.zsh-uv-env]
+github = "matthiasha/zsh-uv-env"
+
+[plugins.web-search]
+github = "Anant-mishra1729/web-search"
+
+[plugins.zsh-you-should-use]
+github = "MichaelAquilina/zsh-you-should-use"
+
+[plugins.omz-ytdl-aliases]
+github = "katrinleinweber/oh-my-zsh-youtube-dl-aliases"
+
+[plugins.zpy]
+github = "AndydeCleyre/zpy"
+
+[plugins.zsh-smart-insert]
+github = "lgdevlop/zsh-smart-insert"
+
+[plugins.zsh-shellcolor]
+github = "SaltedBlowfish/zsh-shellcolor"
+
+[plugins.zsh-syntax-highlightigng-dracula]
+github = "dracula/zsh-syntax-highlighting"
+
+[plugins.docker-aliases]
+github = "webyneter/docker-aliases"
+
+[plugins.evalcache]
+github = "mroth/evalcache"
+
+[plugins.figures]
+github = "zpm-zsh/figures"
+
+[plugins.fzf-zsh]
+github = "scaryrawr/fzf.zsh"
+
+[plugins.zsh-hints]
+github = "joepvd/zsh-hints"
+
+[plugins.zsh-smartcache]
+github = "QuarticCat/zsh-smartcache"
+
+[plugins.yazi-zoxide-zsh]
+github = "fdw/yazi-zoxide-zsh"
+
+[plugins.boss-git-zsh-plugin]
+github = "bossjones/boss-git-zsh-plugin"
+
+[plugins.zsh-random-execute]
+github = "4hiziri/zsh-random-execute"
+
+[plugins.hacker-quotes]
+github = "oldratlee/hacker-quotes"
+apply = ["zre_add_cand"]
+
+[plugins.zsh-welcome-banner]
+github = "joshuadanpeterson/zsh-welcome-banner"
+apply = ["zre_add_cand"]
+
+[plugins.zsh-random-quotes]
+github = "vkolagotla/zsh-random-quotes"
+apply = ["zre_add_cand"]
+
+[plugins.zsh-quotify]
+github = "dpretet/zsh-quotify"
+apply = ["zre_add_cand"]
+
+[plugins.quoter-zsh]
+github = "owenvoke/quoter-zsh"
+apply = ["zre_add_cand"]
+
+[plugins.matecito-zsh]
+github = "uvallasciani/matecito-zsh"
+apply = ["zre_add_cand"]
+
+[plugins.Linus-rants-ZSH]
+github = "bhayward93/Linus-rants-ZSH"
+apply = ["zre_add_cand"]
+
+[plugins.zsh-communism]
+github = "victoria-riley-barnett/Communism"
+apply = ["zre_add_cand"]
+
+[plugins.omz-rand-quote]
+github = "4hiziri/omz-rand-quote"
+apply = ["zre_add_cand"]
+
+[plugins.zenquotes]
+github = "aminelch/zenquotes"
+apply = ["zre_add_cand"]
