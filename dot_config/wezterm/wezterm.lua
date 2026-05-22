@@ -4,6 +4,7 @@ local config = wezterm.config_builder()
 config.automatically_reload_config = true
 config.font_size = 12.0
 config.use_ime = true
+config.scrollback_lines = 100000
 -- 透過とぼかし効果
 config.window_background_opacity = 0.75
 config.text_background_opacity = 0.5

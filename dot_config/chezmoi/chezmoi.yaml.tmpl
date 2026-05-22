@@ -2,8 +2,7 @@ diff:
   pager: delta
 
 merge:
-  command: "emacs"
+  command: "lazygit"
   args:
-    - "-nw"
-    - "--eval"
-    - '(ediff-merge-files-with-ancestor \"{{ "{{" }} .Destination {{ "}}" }}\" \"{{ "{{" }} .Target {{ "}}" }}\" \"{{ "{{" }} .Source {{ "}}" }}\" nil \"{{ "{{" }} .Destination {{ "}}" }}\")'
+    - "--filter"
+    - "{{ "{{ .Destination }}" }}"
