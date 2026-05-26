@@ -191,3 +191,6 @@ apply = ["zre_add_cand"]
 [plugins.zenquotes]
 github = "aminelch/zenquotes"
 apply = ["zre_add_cand"]
+
+[plugins.git-open]
+github = "paulirish/git-open"
