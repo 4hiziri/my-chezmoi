@@ -20,7 +20,7 @@ github = "romkatv/zsh-defer"
 [templates]
 defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
 zre_add_cand = "{{ hooks?.pre | nl }}{% for file in files %}zre_add_cand \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
-
+PATHbin = 'export PATH="{{ dir }}/bin:$PATH"'
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
@@ -194,3 +194,21 @@ apply = ["zre_add_cand"]
 
 [plugins.git-open]
 github = "paulirish/git-open"
+
+[plugins.arttime]
+github = "poetaman/arttime"
+apply = ["PATHbin"]
+
+[plugins.has]
+github = "kdabir/has"
+apply =  ["PATH"]
+
+[plugins.desk]
+github = "jamesob/desk"
+
+[plugins.hhighlighter]
+github = "paoloantinori/hhighlighter"
+
+# [plugins.ricksay]
+# inline = "sh_ricksay() { ricksay }"
+# apply = ["zre_add_cand"]

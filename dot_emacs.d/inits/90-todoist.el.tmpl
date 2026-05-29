@@ -1,0 +1,3 @@
+(use-package org-todoist
+  :ensure (:host github :repo "Lillenne/org-todoist" :main "org-todoist.el")
+  :custom (org-todoist-api-token "{{ (bitwarden "item" "Todoist API Token").notes }}"))

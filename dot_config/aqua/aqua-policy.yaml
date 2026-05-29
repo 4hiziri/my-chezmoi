@@ -5,7 +5,7 @@
 registries:
   - name: local
     type: local
-    path: "./yaskkserv2-reg.yaml"
+    path: "./reg.yaml"
   - type: standard
     ref: semver(">= 3.0.0")
 packages:

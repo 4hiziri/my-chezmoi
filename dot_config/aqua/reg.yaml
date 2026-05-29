@@ -1,0 +1,303 @@
+packages:
+  - type: github_release
+    repo_owner: wachikun
+    repo_name: yaskkserv2
+    description: Yet Another SKK server
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: "true"
+        asset: yaskkserv2-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        files:
+          - name: yaskkserv2
+            src: "yaskkserv2-{{.Version}}-{{.Arch}}-{{.OS}}/yaskkserv2"
+          - name: yaskkserv2_make_dictionary
+            src: "yaskkserv2-{{.Version}}-{{.Arch}}-{{.OS}}/yaskkserv2_make_dictionary"
+        format: tar.gz
+        rosetta2: true
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: apple-darwin
+          linux: unknown-linux-gnu
+          windows: pc-windows-gnu
+        overrides:
+          - goos: windows
+            format: zip
+        supported_envs:
+          - darwin/amd64
+          - windows/amd64
+          - linux/amd64
+  - type: github_release
+    repo_owner: tramhao
+    repo_name: termusic
+    description: Music Player TUI written in Rust
+    files:
+      - name: termusic
+        src: "termusic-{{.Version}}-{{.Arch}}-{{.OS}}/termusic"
+      - name: termusic-server
+        src: "termusic-{{.Version}}-{{.Arch}}-{{.OS}}/termusic-server"
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: Version == "v0.6.7"
+        no_asset: true
+      - version_constraint: semver("<= 0.7.3")
+        asset: termusic-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.xz
+        replacements:
+          amd64: x86_64
+        supported_envs:
+          - linux/amd64
+      - version_constraint: semver("<= 0.12.1")
+        asset: termusic-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.xz
+        rosetta2: true
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          darwin: macos
+        overrides:
+          - goos: windows
+            format: zip
+        supported_envs:
+          - darwin
+          - windows
+          - amd64
+      - version_constraint: "true"
+        asset: termusic-{{.Version}}-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.xz
+        windows_arm_emulation: true
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: macos
+        overrides:
+          - goos: windows
+            format: zip
+            replacements: {}
+  - type: github_release
+    repo_owner: Canop
+    repo_name: broot
+    description: A new way to see and navigate directory trees
+    version_constraint: "true"
+    asset: broot_{{trimV .Version}}.{{.Format}}
+    format: zip
+    replacements:
+      amd64: x86_64
+      arm64: aarch64
+      darwin: apple-darwin
+      linux: unknown-linux-gnu
+      android: linux-android
+      windows: pc-windows-gnu
+      netbsd: unknown-netbsd
+    files:
+      - name: broot
+        src: "{{.Arch}}-{{.OS}}/broot"
+    supported_envs:
+      - darwin/arm64
+      - linux/arm64
+      - linux/arm
+      - linux/amd64
+      - netbsd/amd64
+      - android/amd64
+      - windows/amd64
+  - type: github_release
+    repo_owner: cooklang
+    repo_name: cookcli
+    description: Recipe Management CLI + embedded web-server in one binary
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver(">= 0.29.1")
+        asset: cook-{{.Arch}}-{{OS}}.{{.Format}}
+        format: .tar.gz
+        replacements:
+          arm64: aarch64
+          amd64: x86_64
+          386: i686
+          darwin: apple-darwin
+          windows: pc-windows-msvc
+          linux: unknown-linux-gnu
+          freebsd: unknown-freebsd
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+        supported_envs:
+          - darwin/arm64
+          - darwin/amd64
+          - windows/arm64
+          - windows/386
+          - windows/amd64
+          - linux/amd64
+          - freebsd/amd64
+      - version_constraint: Version == "0.0.1"
+        asset: CookCLI_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        rosetta2: true
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.0.10")
+        asset: CookCLI_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        rosetta2: true
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.1.2")
+        asset: CookCLI_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        rosetta2: true
+        overrides:
+          - goos: darwin
+            asset: CookCLI_{{trimV .Version}}_{{.OS}}_{{.Arch}}_arm64.{{.Format}}
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.1.5")
+        asset: CookCLI_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        rosetta2: true
+        overrides:
+          - goos: darwin
+            asset: CookCLI_{{trimV .Version}}_{{.OS}}_{{.Arch}}_arm64.{{.Format}}
+        supported_envs:
+          - linux
+          - darwin
+      - version_constraint: Version == "v0.1.6"
+        asset: CookCLI_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: zip
+        rosetta2: true
+        overrides:
+          - goos: darwin
+            asset: CookCLI_{{trimV .Version}}_{{.OS}}_{{.Arch}}_arm64.{{.Format}}
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: semver("<= 0.5.0")
+        asset: cook-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+        supported_envs:
+          - darwin
+          - windows
+      - version_constraint: semver("<= 0.16.0")
+        asset: cook-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: semver("<= 0.17.1")
+        asset: cook-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: zip
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            format: tar.gz
+        supported_envs:
+          - linux
+          - windows
+      - version_constraint: semver("<= 0.19.0")
+        asset: cook-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: semver("<= 0.19.2")
+        no_asset: true
+      - version_constraint: semver("<= 0.20.0")
+        asset: cook-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+      - version_constraint: Version == "v0.21.0"
+        asset: cook-i686-{{.OS}}.{{.Format}}
+        format: zip
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            format: tar.gz
+            asset: cook-{{.Arch}}-{{.OS}}.{{.Format}}
+          - goos: darwin
+            format: tar.gz
+            asset: cook-{{.Arch}}-{{.OS}}.{{.Format}}
+          - goos: windows
+            goarch: arm64
+            asset: cook-{{.Arch}}-{{.OS}}.{{.Format}}
+      - version_constraint: "true"
+        asset: cook-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-musl
+          windows: pc-windows-msvc
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.sha256"
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip

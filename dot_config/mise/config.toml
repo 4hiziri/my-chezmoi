@@ -1,6 +1,9 @@
 [tools]
 go = "latest"
+npm = "latest"
+pipx = "latest"
 python = "3.14"
 ruby = "latest"
 rust = "latest"
+sbcl = "latest"
 uv = "latest"

@@ -269,6 +269,13 @@ fi
 ## modern tree, broot
 source /home/tkgsy/.config/broot/launcher/bash/br
 
+## search command alias
+
+if command -v s 2>&1 > /dev/null ; then
+    alias sa="s -p amazon"
+    alias sw="s -p wikipedia"
+fi
+
 # dict command
 if ! type -a dictd 2>&1 > /dev/null ; then
     sudo apt install -y dictd dict-freedict-jpn-eng dict-freedict-eng-jpn
