@@ -107,8 +107,10 @@ packages:
     version_constraint: "false"
     version_overrides:
       - version_constraint: semver(">= 0.29.1")
-        asset: cook-{{.Arch}}-{{OS}}.{{.Format}}
-        format: .tar.gz
+        asset: cook-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        files:
+          - name: cook
         replacements:
           arm64: aarch64
           amd64: x86_64
@@ -118,6 +120,8 @@ packages:
           linux: unknown-linux-gnu
           freebsd: unknown-freebsd
         checksum:
+          enabled: true
+          require_checksum: true
           type: github_release
           asset: "{{.Asset}}.sha256"
           algorithm: sha256
@@ -301,3 +305,144 @@ packages:
         overrides:
           - goos: windows
             format: zip
+  - type: github_release
+    repo_owner: s0rg
+    repo_name: crawley
+    description: The unix-way web crawler
+    version_constraints: "true"
+    checksum:
+      enabled: true
+      require_checksum: true
+      type: github_release
+      asset: "crawley_{{trimV .Version}}_checksums.txt"
+      file_format: regexp
+      pattern:
+        checksum: ^(.{64})
+        file: "^.{64}\\s+(\\S+)$"
+    asset: crawley_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+    format: tar.gz
+    replacements:
+      amd64: x86_64
+    overrides:
+      - goos: windows
+        format: zip
+    supported_envs:
+      - darwin/amd64
+      - darwin/arm4
+      - freebsd/amd64
+      - freebsd/arm64
+      - linux/amd64
+      - linux/arm64
+      - windows/amd64
+  - type: github_release
+    repo_owner: Hakky54
+    repo_name: certificate-ripper
+    description: A CLI tool to extract server certificates
+    version_constraints: true
+    asset: "crip-{{.OS}}-{{.Arch}}.{{.Format}}"
+    format: tar.gz
+    replacements:
+      darwin: macos
+      arm64: aarch64
+    overrides:
+      - goos: windows
+        format: zip
+    supported_envs:
+      - linux/arm64
+      - linux/amd64
+      - darwin/arm64
+      - darwin/amd64
+      - windows/amd64
+    files:
+      - name: crip
+  - type: github_release
+    repo_owner: Achno
+    repo_name: gowall
+    description: A tool to convert a Wallpaper's color scheme/palette, OCR with VLM's Traditional & Hybrid, Image Compression, color palette extraction, image upsacling with Adversarial Networks and more image processing features
+    version_constraints: true
+    asset: "gowall-{{.Arch}}-{{.OS}}.{{.Format}}"
+    format: tar.gz
+    supported_envs:
+      - darwin/amd64
+      - darwin/arm64
+      - linux/amd64
+      - windows/amd64
+      - windows/arm64
+  - type: github_release
+    repo_owner: akavel
+    repo_name: up
+    description: Ultimate Plumber is a tool for writing Linux pipes with instant live preview
+    version_constraints: true
+    asset: "up-{{.OS}}"
+    overrides:
+      - goos: linux
+        asset: "up"
+  - type: github_release
+    repo_owner: slavaGanzin
+    repo_name: await
+    description: 40K, small memory footprint, single binary that run list of commands in parallel and waits for their termination
+    version_constraints: true
+    asset: "await-{{trimV .Version}}-{{.Arch}}-{{.OS}}.{{.Format}}"
+    format: tar.gz
+    replacements:
+      darwin: apple-darwin
+      linux: unknown-linux-gnu
+      amd64: x86_64
+      arm64: aarch64
+    supported_envs:
+      - darwin/arm64
+      - darwin/amd64
+      - linux/amd64
+  - type: github_release
+    repo_owner: marph91
+    repo_name: jimmy
+    description:  Convert your notes to Markdown
+    version_constraints: true
+    asset: "jimmy-{{.OS}}-{{.Arch}}"
+    overrides:
+      - goos: windows
+        asset: "jimmy-{{.OS}}-{{.Arch}}.{{.Format}}"
+        format: exe
+      - goos: linux
+        asset: "jimmy-{{.OS}}"
+    supported_envs:
+      - darwin/arm64
+      - darwin/amd64
+      - linux/amd64
+      - windows/amd64
+  - type: github_release
+    repo_owner: Qalculate
+    repo_name: libqalculate
+    description: Qalculate! library and CLI
+    version_constraints: true
+    asset: "qalculate-{{trimV .Version}}-{{.Arch}}.{{.Format}}"
+    format: tar.xz
+    files:
+      - name: qalc
+        src: "qalculate-{{trimV .Version}}/qalc"
+    replacements:
+      amd64: x64
+      amd64: x86_64
+    overrides:
+      - goos: windows
+        format: zip
+      - goos: linux
+        format: tar.xz
+    supported_envs:
+      - linux/amd64
+      - windows/amd64
+  - type: github_release
+    repo_owner: browsh-org
+    repo_name: browsh
+    description: A fully-modern text-based browser, rendering to TTY and browsers
+    asset: browsh_{{trimV .Version}}_{{.OS}}_{{.Arch}}
+    format: raw
+    windows_arm_emulation: true
+    overrides:
+      - goos: darwin
+        format: tar.gz
+        asset: browsh_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+    checksum:
+      type: github_release
+      asset: browsh_{{trimV .Version}}_checksums.txt
+      algorithm: sha256
