@@ -23,3 +23,4 @@ aqua -c $AQUA_CONFIG_PATH g -i  twpayne/chezmoi
 aqua -c $AQUA_CONFIG_PATH i
 
 export PATH="$(aqua root-dir)/bin:$PATH"
+echo "installed aqua and done chezmoi setup"
