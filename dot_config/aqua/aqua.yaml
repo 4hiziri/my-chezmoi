@@ -81,3 +81,9 @@ packages:
 - name: awslabs/git-secrets@1.3.0
 - name: browsh-org/browsh@v1.8.2
   registry: local
+- name: junegunn/fzf@v0.73.1
+- name: walles/riff@3.6.1
+  registry: local
+- name: bnagy/cgasm@v1.0.0
+  registry: local
+- name: sclevine/yj@v5.1.0

@@ -446,3 +446,21 @@ packages:
       type: github_release
       asset: browsh_{{trimV .Version}}_checksums.txt
       algorithm: sha256
+  - type: github_release
+    repo_owner: walles
+    repo_name: riff
+    description: A syntax highter for diffs, clarifying which parts of lines have changed
+    version_constraints: true
+    asset: riff-{{trimV .Version}}-{{.Arch}}-{{.OS}}
+    format: raw
+    replacements:
+      darwin: macos
+      arm64: aarch64
+      amd64: x86_64
+    overrides:
+      - goos: windows
+        asset: riff-{{trimV .Version}}-{{.Arch}}-{{.OS}}.exe
+  - type: go_install
+    repo_owner: bnagy
+    repo_name: cgasm
+    description:  We're insanely passionate about command line asm documentation in the cloud, and we're crushing it
