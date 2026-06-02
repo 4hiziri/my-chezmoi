@@ -8,11 +8,11 @@ wget "https://github.com/aquaproj/aqua/releases/latest/download/aqua_linux_amd64
 tar xvf "aqua_linux_amd64.tar.gz"
 mkdir -p ~/.local/bin 2&>1 > /dev/null
 cp aqua ~/.local/bin/
-PATH="~/.local/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 
 # make global config file
 mkdir -p ~/.config/aqua 2&>1 > /dev/null
-AQUA_CONFIG_PATH="~/.config/aqua/aqua.yaml"
+AQUA_CONFIG_PATH="$HOME/.config/aqua/aqua.yaml"
 cd ~/.config/aqua/
 aqua init
 
