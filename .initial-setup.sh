@@ -12,10 +12,11 @@ PATH="~/.local/bin:$PATH"
 
 # make global config file
 mkdir -p ~/.config/aqua 2&>1 > /dev/null
+AQUA_CONFIG_PATH="~/.config/aqua/aqua.yaml"
 cd ~/.config/aqua/
 aqua init
 
 # install bitwarden
-aqua g -i -g bitwarden/clients
-aqua g -i -g twpayne/chezmoi
-aqua i -a
+aqua g -i -f $AQUA_CONFIG_PATH bitwarden/clients
+aqua g -i -f $AQUA_CONFIG_PATH twpayne/chezmoi
+aqua -c $AQUA_CONFIG_PATH i
