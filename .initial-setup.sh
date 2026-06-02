@@ -8,7 +8,7 @@ wget "https://github.com/aquaproj/aqua/releases/latest/download/aqua_linux_amd64
 tar xvf "aqua_linux_amd64.tar.gz"
 mkdir -p ~/.local/bin 2&>1 > /dev/null
 cp aqua ~/.local/bin/
-PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # make global config file
 mkdir -p ~/.config/aqua 2&>1 > /dev/null
@@ -21,3 +21,5 @@ aqua up -r
 aqua -c $AQUA_CONFIG_PATH g -i bitwarden/clients
 aqua -c $AQUA_CONFIG_PATH g -i  twpayne/chezmoi
 aqua -c $AQUA_CONFIG_PATH i
+
+export PATH="$(aqua root-dir)/bin:$PATH"
