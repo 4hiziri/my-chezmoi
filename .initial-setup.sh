@@ -17,6 +17,7 @@ cd ~/.config/aqua/
 aqua init
 
 # install bitwarden
+aqua up -r
 aqua g -i -f $AQUA_CONFIG_PATH bitwarden/clients
 aqua g -i -f $AQUA_CONFIG_PATH twpayne/chezmoi
 aqua -c $AQUA_CONFIG_PATH i
