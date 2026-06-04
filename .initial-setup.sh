@@ -35,6 +35,7 @@ echo "DONE: install chezmoi with bitwarden, mise via aqua"
 
 echo "START: chezmoi init"
 MY_REPO="4hiziri/my-chezmoi"
+bw login
 chezmoi init $MY_REPO
 chezmoi apply # need password of bitwarden
 
