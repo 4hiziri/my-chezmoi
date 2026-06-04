@@ -8,7 +8,7 @@ cd $DIR
 
 echo "START: aqua install"
 wget "https://github.com/aquaproj/aqua/releases/latest/download/aqua_linux_amd64.tar.gz"
-tar xvf "aqua_linux_amd64.tar.gz"
+tar xf "aqua_linux_amd64.tar.gz"
 mkdir -p ~/.local/bin 2&>1 > /dev/null
 cp aqua ~/.local/bin/
 export PATH="$HOME/.local/bin:$PATH"
@@ -25,9 +25,9 @@ echo "DONE: setup aqua initial config"
 # install essential tools
 echo "START: install chezmoi with bitwarden, mise via aqua"
 aqua up -r
-aqua g -g bitwarden/clients
-aqua g -g jdx/mise
-aqua g -g twpayne/chezmoi
+aqua g -g -i bitwarden/clients
+aqua g -g -i jdx/mise
+aqua g -g -i twpayne/chezmoi
 aqua i -a
 
 export PATH="$(aqua root-dir)/bin:$PATH"
