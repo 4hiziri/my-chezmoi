@@ -1,0 +1,32 @@
+packages:
+  debian:
+    apt:
+      - lolcat
+      - htop
+      - streamlink
+      - aria2
+      - yank
+      - ack
+      - git-secret
+#      - docker.io
+#      - docekr-compose-v2
+      - unar
+      - apt-file
+      - build-essential
+      - clamav
+      - cmigemo
+      - cowsay
+      - dict-freedict-eng-jpn
+      - dict-freedict-jpn-eng
+      - dict
+      - git
+      - jq
+      - nkf
+      - terminator
+      - wezterm-nightly
+      - tmux
+      - ufw
+      - virtualbox-7.2
+      - xclip
+      - zsh
+      - vim
