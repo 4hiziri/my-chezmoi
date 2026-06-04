@@ -37,3 +37,6 @@ echo "START: chezmoi init"
 MY_REPO="4hiziri/my-chezmoi"
 chezmoi init $MY_REPO
 chezmoi apply # need password of bitwarden
+
+# linux part, for ruby, sbcl
+sudo apt install libffi-dev libssl-dev libyaml-dev zlib1g-dev libzstd-dev
