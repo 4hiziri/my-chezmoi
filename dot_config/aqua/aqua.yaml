@@ -87,3 +87,4 @@ packages:
 - name: bnagy/cgasm@v1.0.0
   registry: local
 - name: sclevine/yj@v5.1.0
+- name: FiloSottile/age@v1.3.1
