@@ -31,7 +31,7 @@ config.show_tabs_in_tab_bar = true
 
 config.window_frame = {
     inactive_titlebar_bg = "none",
-    active_titlebar_bg = "none"
+    active_titlebar_bg = "none",
 }
 
 config.show_new_tab_button_in_tab_bar = false
