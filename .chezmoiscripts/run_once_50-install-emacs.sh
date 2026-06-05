@@ -31,6 +31,8 @@ sudo apt-get -y install\
      ncurses-dev\
      pkg-config\
      texinfo\
+     zlib1g-dev
+
 
 cd
 mkdir 'src' 2>&1 > /dev/null
