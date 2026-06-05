@@ -8,7 +8,7 @@ sudo apt-get -y install\
      gnutls-dev\
      libacl1-dev\
      libasound2-dev\
-     libgccjit-dev\
+     libgccjit-13-dev\
      libgif-dev\
      libgnutls28-dev\
      libgpm-dev\
@@ -17,7 +17,7 @@ sudo apt-get -y install\
      libm17n-dev\
      libmagickwand-dev\
      libotf-dev\
-     libpng-dev
+     libpng-dev\
      librsvg2-dev\
      libseccomp-dev\
      libsystemd-dev\
@@ -37,9 +37,9 @@ sudo apt-get -y install\
 cd
 mkdir 'src' 2>&1 > /dev/null
 cd src
-wget "http://ftp.jaist.ac.jp/pub/GNU/emacs/emacs-$ver.tar.gz"
-tar xvf "emacs-$ver.tar.gz"
-rm -f "emacs-$ver.tar.gz"
+wget "http://ftp.jaist.ac.jp/pub/GNU/emacs/emacs-${ver}.tar.gz"
+tar xf "emacs-${ver}.tar.gz"
+rm -f "emacs-${ver}.tar.gz"
 cd "emacs-$ver"
 
 ./autogen.sh

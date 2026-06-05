@@ -51,4 +51,8 @@ mise plugin add sbcl https://github.com/mise-plugins/mise-sbcl
 mise --raw install # for sbcl build, need raw input/output
 echo "DONE: install tools"
 
+chsh /bin/zsh
+
 cd ~
+
+exec zsh
