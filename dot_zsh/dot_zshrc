@@ -226,7 +226,7 @@ export PATH="/home/tkgsy/.opencode/bin:$PATH"
 
 ## aqua conf
 export AQUA_GLOBAL_CONFIG="$HOME/.config/aqua/aqua.yaml"
-export AQUA_POLICY_CONFIG="$HOME/.config/aqua/aqua-policy.yaml"
+# export AQUA_POLICY_CONFIG="$HOME/.config/aqua/aqua-policy.yaml"
 
 if command -v aqua 2>&1 > /dev/null; then
     PATH="$PATH:$(aqua root-dir)/bin"

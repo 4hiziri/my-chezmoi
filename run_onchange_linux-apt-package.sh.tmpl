@@ -1,6 +1,6 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
-sudo apt install {{ .packages.debian.apt | join " " -}}
+sudo apt install -y {{ .packages.debian.apt | join " " -}}
 
 {{ end -}}
