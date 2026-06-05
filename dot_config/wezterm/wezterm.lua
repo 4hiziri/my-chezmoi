@@ -32,6 +32,22 @@ config.show_tabs_in_tab_bar = true
 config.window_frame = {
     inactive_titlebar_bg = "none",
     active_titlebar_bg = "none",
+    font_size = 10,
+    font = wezterm.font_with_fallback({
+        {
+            family = "OpenDyslexic Nerd Font",
+            weight = "Bold",
+            style = "Italic",
+        },
+        {
+            family = "Cica",
+            weight = "Bold",
+        },
+        "Cica",
+        "JetBrains Mono", -- built-in
+        "Noto Color Emoji",
+        "Symbols Nerd Font Mono",
+    })
 }
 
 config.show_new_tab_button_in_tab_bar = false
@@ -68,7 +84,7 @@ wezterm.on(
             {Text = SOLID_LEFT_ARROW},
             {Background = {Color = background}},
             {Foreground = {Color = foreground}},
-            {Text = title},
+            {Text = title},9~
             {Background = {Color = edge_background}},
             {Foreground = {Color = edge_foreground}},
             {Text = SOLID_RIGHT_ARROW}
@@ -79,7 +95,15 @@ wezterm.on(
 config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 600
 
+--- font
 
+config.font = wezterm.font_with_fallback({
+    "GeistMono Nerd Font",
+    "Cica",
+    "JetBrains Mono",
+    "Noto Color Emoji",
+    "Symbols Nerd Font Mono",
+})
 
 -- leader key
 config.disable_default_key_bindings = true
