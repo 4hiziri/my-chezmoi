@@ -35,13 +35,6 @@ aqua i -a
 export PATH="$(aqua root-dir)/bin:$PATH"
 echo "DONE: install chezmoi with bitwarden, mise via aqua"
 
-echo "START: chezmoi deply"
-MY_REPO="4hiziri/my-chezmoi"
-bw login
-chezmoi init $MY_REPO
-chezmoi apply # need password of bitwarden
-echo "DONE: chezmoi deply"
-
 echo "START: install tools"
 # linux part, for ruby, sbcl
 sudo apt install -y libffi-dev libssl-dev libyaml-dev zlib1g-dev libzstd-dev
@@ -50,6 +43,13 @@ mise plugin add sbcl https://github.com/mise-plugins/mise-sbcl
 
 mise --raw install # for sbcl build, need raw input/output
 echo "DONE: install tools"
+
+echo "START: chezmoi deply"
+MY_REPO="4hiziri/my-chezmoi"
+bw login
+chezmoi init $MY_REPO
+chezmoi apply # need password of bitwarden
+echo "DONE: chezmoi deply"
 
 chsh /bin/zsh
 

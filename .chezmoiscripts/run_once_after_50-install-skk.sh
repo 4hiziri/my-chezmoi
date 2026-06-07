@@ -4,14 +4,14 @@
 sudo apt-get install -y fcitx5 fcitx5-skk
 
 # make skk dict
-mkdir -p "~/src"
-cd "~/src"
+mkdir -p "$HOME/src"
+cd "$HOME/src"
 git clone "https://github.com/skk-dev/dict"
 cd dict
 for JISYO in $(ls -1 | grep "SKK-JISYO.*"); do
     nkf --ic=e --oc=w8 -O $JISYO "$JISYO.utf-8"
 done
-cd "~/src"
+cd "$HOME/src"
 git clone "https://github.com/4hiziri/my-skk-dict"
 
 DICT_NAME=SKK-JISYO.yaskkserv2
