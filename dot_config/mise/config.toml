@@ -10,7 +10,6 @@ rust = "latest"
 sbcl = "latest"
 chezmoi = "latest"
 cargo-binstall = "latest"
-"pipx:ruff" = "latest"
 "cargo:eza" = { version = "latest", depends = "cargo-binstall" }
 "cargo:sheldon" = { version = "latest", depends = "cargo-binstall" }
 "cargo:starship" = { version = "latest", depends = "cargo-binstall" }
@@ -32,32 +31,32 @@ gping = "latest"
 "cargo:yazi-fm" = { version = "latest", depends = "cargo-binstall" }
 "cargo:duf" = { version = "latest", depends = "cargo-binstall" }
 "cargo:macchina" = { version = "latest", depends = "cargo-binstall" }
+"cargo:riffdiff" = { version = "latest", depends = "cargo-binstall" }
+"cargo:grex" = { version = "latest", depends = "cargo-binstall" }
+"cargo:aichat" = { version = "latest", depends = "cargo-binstall" }
+"cargo:intelli-shell" = { version = "latest", depends = "cargo-binstall" }
+"cargo:lowcharts" = { version = "latest", depends = "cargo-binstall" }
+"cargo:wachikun/yaskkserv2" = { version = "latest", depends = "cargo-binstall" }
+"cargo:termusic" = { version = "latest", depends = "cargo-binstall" }
+"cargo:termusic-server" = { version = "latest", depends = "cargo-binstall" }
+"cargo:broot" = { version = "latest", depends = "cargo-binstall" }
+"cargo:cookcli" = { version = "latest", depends = "cargo-binstall" }
 peco = "latest"
 doggo = "latest"
 cheat = "latest"
 curlie = "latest"
-"aqua:gokcehan/lf" = "latest"
 lazygit = "latest"
-"github:jdx/usage" = "latest"
 fx = "latest"
 bitwarden = "latest"
-"cargo:grex" = { version = "latest", depends = "cargo-binstall" }
-"cargo:aichat" = { version = "latest", depends = "cargo-binstall" }
-"cargo:intelli-shell" = { version = "latest", depends = "cargo-binstall" }
-"aqua:zquestz/s" = "latest"
-"aqua:sibprogrammer/xq" = "latest"
-"aqua:Boeing/config-file-validator" = "2.1.0"
-"cargo:lowcharts" = { version = "latest", depends = "cargo-binstall" }
-"aqua:awslabs/git-secrets" = "latest"
 fzf = "latest"
 yj = "latest"
 age = "latest"
-"cargo:wachikun/yaskkserv2" = "latest"
-"cargo:termusic" = "latest"
-"cargo:termusic-server" = "latest"
-"cargo:broot" = "latest"
+"aqua:gokcehan/lf" = "latest"
+"aqua:zquestz/s" = "latest"
+"aqua:sibprogrammer/xq" = "latest"
+"aqua:Boeing/config-file-validator" = "2.1.0"
+"aqua:awslabs/git-secrets" = "latest"
 "github:s0rg/crawley" = "latest"
-"cargo:cookcli" = "latest"
 "github:Hakky54/certificate-ripper" = "latest"
 "github:Achno/gowall" = "latest"
 "github:akavel/up" = "latest"
@@ -65,33 +64,34 @@ age = "latest"
 "github:marph91/jimmy" = "latest"
 "github:Qalculate/libqalculate" = "latest"
 "github:browsh-org/browsh" = "1.8.2"
-"cargo:riffdiff" = "latest"
+"github:jdx/usage" = "latest"
 "go:github.com/bnagy/cgasm" = "latest"
-"pipx:glances" = "latest"
-"pipx:howdoi" = "latest"
-"pipx:yewtube" = "latest"
-# "pipx:radio-active" = { version = "latest", pipx_args = ["--python", "~/.local/share/mise/installs/python/3.13.x/bin/python3.13"] }
-"pipx:moviemon" = "latest"
-"pipx:epy-reader" = "latest"
-"pipx:rebound-cli" = "latest"
-"pipx:buku" = "latest"
-"pipx:hns" = "latest"
-"pipx:lakshmi" = "latest"
-"pipx:gcalcli" = "latest"
-"pipx:deadlink" = "latest"
-"pipx:thefuck" = "latest"
-"pipx:recoverpy" = "latest"
-"pipx:ricksay" = "latest"
-"pipx:marker" = "latest"
-"pipx:pdd" = "latest"
-"pipx:pywal" = "latest"
-"npm:prettier" = "latest"
-"npm:bible" = "latest"
-"npm:birthday" = "latest"
-"npm:themer" = "latest"
-"npm:mdlt" = "latest"
-"npm:hget" = "latest"
-"npm:trino" = "latest"
-"npm:emoj" = "latest"
-"gem:vj" = "latest"
-"gem:boom" = "latest"
+"pipx:ruff" = { version = "latest", depends = "pipx" }
+"pipx:glances" = { version = "latest", depends = "pipx" }
+"pipx:howdoi" = { version = "latest", depends = "pipx" }
+"pipx:yewtube" = { version = "latest", depends = "pipx" }
+# "pipx:radio-active" = { version = { version = "latest", depends = "pipx" }, pipx_args = ["--python", "~/.local/share/mise/installs/python/3.13.x/bin/python3.13"] }
+"pipx:moviemon" = { version = "latest", depends = "pipx" }
+"pipx:epy-reader" = { version = "latest", depends = "pipx" }
+"pipx:rebound-cli" = { version = "latest", depends = "pipx" }
+"pipx:buku" = { version = "latest", depends = "pipx" }
+"pipx:hns" = { version = "latest", depends = "pipx" }
+"pipx:lakshmi" = { version = "latest", depends = "pipx" }
+"pipx:gcalcli" = { version = "latest", depends = "pipx" }
+"pipx:deadlink" = { version = "latest", depends = "pipx" }
+"pipx:thefuck" = { version = "latest", depends = "pipx" }
+"pipx:recoverpy" = { version = "latest", depends = "pipx" }
+"pipx:ricksay" = { version = "latest", depends = "pipx" }
+"pipx:marker" = { version = "latest", depends = "pipx" }
+"pipx:pdd" = { version = "latest", depends = "pipx" }
+"pipx:pywal" = { version = "latest", depends = "pipx" }
+"npm:prettier" = { version = "latest", depends = "npm" }
+"npm:bible" = { version = "latest", depends = "npm" }
+"npm:birthday" = { version = "latest", depends = "npm" }
+"npm:themer" = { version = "latest", depends = "npm" }
+"npm:mdlt" = { version = "latest", depends = "npm" }
+"npm:hget" = { version = "latest", depends = "npm" }
+"npm:trino" = { version = "latest", depends = "npm" }
+"npm:emoj" = { version = "latest", depends = "npm" }
+"gem:vj" = { version = "latest", depends = "npm" }
+"gem:boom" = { version = "latest", depends = "npm" }
