@@ -51,11 +51,15 @@ aqua g -g -i twpayne/chezmoi
 aqua i -a
 eend $?
 
-export PATH="$(aqua root-dir)/bin:$PATH"
-
 ebegin "Login bitwarden"
 export BW_SESSION=$(bw login --raw)
 eend $?
+
+ebegin "Set github token"
+export GITHUB_TOKEN=$(bw get notes "github token")
+eend $?
+
+export PATH="$(aqua root-dir)/bin:$PATH"
 
 ebegin "Install mise tools"
 sudo apt install -y libffi-dev libssl-dev libyaml-dev zlib1g-dev libzstd-dev
