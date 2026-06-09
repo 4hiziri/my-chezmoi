@@ -6,9 +6,13 @@ cd $TEMP
 install_font() {
     cd $TEMP
     local URL=$1
+    local DIR=$(basename $URL '.zip')
+    if [ -e "$HOME/.local/share/fonts/${DIR}" ]; then
+        echo "${DIR} installed, skip"
+        return 0
+    fi
     wget $URL
     unar $(basename $URL)
-    local DIR=$(basename $URL '.zip')
     mkdir -p "$HOME/.local/share/fonts/${DIR}"
     for file in $(ls -1 $DIR | grep -E '(otf|ttf)'); do
         cp "$DIR/$file" "$HOME/.local/share/fonts/${DIR}"
@@ -18,9 +22,13 @@ install_font() {
 install_nerd_font() {
     cd $TEMP
     local URL=$1
+    local DIR=$(basename $URL '.zip')
+    if [ -e "$HOME/.local/share/fonts/${DIR}Nerd" ]; then
+        echo "${DIR} Nerd installed, skip"
+        return 0
+    fi
     wget $URL
     unar $(basename $URL)
-    local DIR=$(basename $URL '.zip')
     mkdir -p "$HOME/.local/share/fonts/${DIR}Nerd"
     for file in $(ls -1 $DIR | grep -E '(otf|ttf)'); do
         cp "$DIR/$file" "$HOME/.local/share/fonts/${DIR}Nerd"

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -e "$HOME/.config/skk/" ];then
+    echo "skk installed, skip"
+    exit 0
+fi
+
 # install skk input system
 sudo apt-get install -y fcitx5 fcitx5-skk
 

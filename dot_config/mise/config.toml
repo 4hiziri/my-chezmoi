@@ -65,25 +65,25 @@ age = "latest"
 "github:browsh-org/browsh" = "1.8.2"
 "github:jdx/usage" = "latest"
 "go:github.com/bnagy/cgasm" = "latest"
-"pipx:ruff" = { version = "latest", depends = "pipx" }
-"pipx:glances" = { version = "latest", depends = "pipx" }
-"pipx:howdoi" = { version = "latest", depends = "pipx" }
-"pipx:yewtube" = { version = "latest", depends = "pipx" }
-# "pipx:radio-active" = { version = { version = "latest", depends = "pipx" }, pipx_args = ["--python", "~/.local/share/mise/installs/python/3.13.x/bin/python3.13"] }
-"pipx:moviemon" = { version = "latest", depends = "pipx" }
-"pipx:epy-reader" = { version = "latest", depends = "pipx" }
-"pipx:rebound-cli" = { version = "latest", depends = "pipx" }
-"pipx:buku" = { version = "latest", depends = "pipx" }
-"pipx:hns" = { version = "latest", depends = "pipx" }
-"pipx:lakshmi" = { version = "latest", depends = "pipx" }
-"pipx:gcalcli" = { version = "latest", depends = "pipx" }
-"pipx:deadlink" = { version = "latest", depends = "pipx" }
-"pipx:thefuck" = { version = "latest", depends = "pipx" }
-"pipx:recoverpy" = { version = "latest", depends = "pipx" }
-"pipx:ricksay" = { version = "latest", depends = "pipx" }
-"pipx:marker" = { version = "latest", depends = "pipx" }
-"pipx:pdd" = { version = "latest", depends = "pipx" }
-"pipx:pywal" = { version = "latest", depends = "pipx" }
+"pipx:ruff" = { version = "latest", depends = "uv" }
+"pipx:glances" = { version = "latest", depends = "uv" }
+"pipx:howdoi" = { version = "latest", depends = "uv" }
+"pipx:yewtube" = { version = "latest", depends = "uv" }
+# "pipx:radio-active" = { version = { version = "latest", depends = "uv" }, pipx_args = ["--python", "~/.local/share/mise/installs/python/3.13.x/bin/python3.13"] }
+"pipx:moviemon" = { version = "latest", depends = "uv" }
+"pipx:epy-reader" = { version = "latest", depends = "uv" }
+"pipx:rebound-cli" = { version = "latest", depends = "uv" }
+"pipx:buku" = { version = "latest", depends = "uv" }
+"pipx:hns" = { version = "latest", depends = "uv" }
+"pipx:lakshmi" = { version = "latest", depends = "uv" }
+"pipx:gcalcli" = { version = "latest", depends = "uv" }
+"pipx:deadlink" = { version = "latest", depends = "uv" }
+"pipx:thefuck" = { version = "latest", depends = "uv" }
+"pipx:recoverpy" = { version = "latest", depends = "uv" }
+"pipx:ricksay" = { version = "latest", depends = "uv" }
+"pipx:marker" = { version = "latest", depends = "uv" }
+"pipx:pdd" = { version = "latest", depends = "uv" }
+"pipx:pywal" = { version = "latest", depends = "uv" }
 "npm:prettier" = { version = "latest", depends = "npm" }
 "npm:bible" = { version = "latest", depends = "npm" }
 "npm:birthday" = { version = "latest", depends = "npm" }
