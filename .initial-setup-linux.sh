@@ -16,7 +16,7 @@ eend() {
     shift
     echo -e "${RED}$last_emsg: failed. $*${CLEAR}" >&2
     echo "Error, exit"
-    exit 1
+    /bin/bash
   fi
 }
 
@@ -61,16 +61,20 @@ eend $?
 
 export PATH="$(aqua root-dir)/bin:$PATH"
 
+ebegin "Deploy mise dotfiles"
+MY_REPO="4hiziri/my-chezmoi"
+chezmoi init $MY_REPO
+chezmoi apply "~/.config/mise/config.toml"
+eend $?
+
 ebegin "Install mise tools"
 sudo apt install -y libffi-dev libssl-dev libyaml-dev zlib1g-dev libzstd-dev
 mise plugin add sbcl https://github.com/mise-plugins/mise-sbcl
 mise --raw install # for sbcl build, need raw input/output
 eend $?
 
-ebegin "Deploy dotfiles"
-MY_REPO="4hiziri/my-chezmoi"
-chezmoi init $MY_REPO
-chezmoi apply # need password of bitwarden
+ebegin "Deploy all dotfiles"
+chezmoi apply
 eend $?
 
 ebegin "Change shell"

@@ -8,7 +8,6 @@ uv = "latest"
 ruby = "latest"
 rust = "latest"
 sbcl = "latest"
-chezmoi = "latest"
 cargo-binstall = "latest"
 "cargo:eza" = { version = "latest", depends = "cargo-binstall" }
 "cargo:sheldon" = { version = "latest", depends = "cargo-binstall" }
@@ -93,5 +92,5 @@ age = "latest"
 "npm:hget" = { version = "latest", depends = "npm" }
 "npm:trino" = { version = "latest", depends = "npm" }
 "npm:emoj" = { version = "latest", depends = "npm" }
-"gem:vj" = { version = "latest", depends = "npm" }
-"gem:boom" = { version = "latest", depends = "npm" }
+"gem:vj" = "latest"
+"gem:boom" = "latest"
