@@ -1,0 +1,37 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+TEMP=$(mktemp -d)
+
+# install yubico-authenticator
+if [[ ! -e /home/tkgsy/.local/share/applications/com.yubico.yubioath.desktop ]]; then
+    VER="7.3.3"
+    cd $TEMP
+    wget "https://developers.yubico.com/yubioath-flutter/Releases/yubico-authenticator-${VER}-linux.tar.gz"
+    tar xf "yubico-authenticator-${VER}-linux.tar.gz"
+    cd "yubico-authenticator-${VER}-linux"
+
+    sudo apt install pcscd gnome-screenshot
+    ./desktop_integration.sh --install
+else
+    echo "yubico authenticator installed, skip"
+fi
+
+# install ykman
+command -v ykman 2>&1 > /dev/null
+if [[ $? -eq 0 ]]; then
+    echo "ykman installed, skip"
+    exit 0
+fi
+VER="5.9.1"
+SHA256HASH="950873c3cd6e93b7b2e7d5dca8c2de7704822d12a4ab26e1ec523c629178666a"
+
+cd $TEMP
+wget "https://developers.yubico.com/yubikey-manager/Releases/yubikey_manager-${VER}-py3-none-any.whl"
+
+if echo $SHA256HASH "yubikey_manager-${VER}-py3-none-any.whl" | sha256sum -c; then
+    sudo apt install libpcsclite-dev
+    uv tool install yubikey_manager-${VER}-py3-none-any.whl
+fi
+
+{{ end -}}
