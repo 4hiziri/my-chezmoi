@@ -31,3 +31,5 @@ packages:
       - zsh
       - vim
       - ncurses-term
+      - figlet
+      - toilet
