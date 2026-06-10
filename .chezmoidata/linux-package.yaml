@@ -9,7 +9,7 @@ packages:
       - ack
       - git-secret
       - docker.io
-      - docekr-compose-v2
+      - docker-compose-v2
       - unar
       - apt-file
       - build-essential
