@@ -59,31 +59,31 @@
 (use-package org
   :defer t
   :bind (("C-c c" . org-capture)
-		 ("C-c a" . org-agenda)
-		 :map org-mode-map
-		 ([M-return] . org-insert-heading-dwim))
+         ("C-c a" . org-agenda)
+         :map org-mode-map
+         ([M-return] . org-insert-heading-dwim))
   :init
   (setq org-agenda-files (list "~/misc/memos/"))
   (setq org-capture-templates
-		'(("t" "New TODO" entry
-		   (file+headline "~/misc/memos/TODO.org" "todo list")
-		   "* TODO %?\n\n")
-		  ("m" "Memo" entry
-		   (file+headline "~/misc/memos/memo.org" "Memo")
-		   "* %U%?\n%i\n%a")))
+        '(("t" "New TODO" entry
+           (file+headline "~/misc/memos/TODO.org" "todo list")
+           "* TODO %?\n\n")
+          ("m" "Memo" entry
+           (file+headline "~/misc/memos/memo.org" "Memo")
+           "* %U%?\n%i\n%a")))
   ;; org-agendaでaを押したら予定表とTODOリストを表示
   (setq org-agenda-custom-commands
-		'(("a" "Agenda and TODO"
-		   ((agenda "")
-			(alltodo "")))))
+        '(("a" "Agenda and TODO"
+           ((agenda "")
+            (alltodo "")))))
   ;; sample
   ;; (setq org-agenda-custom-commands
   ;;		'(
   ;;         ("o" . "Original agenda view") ; description for "o" prefix
   ;;         ("ot" todo "TODO")
   ;;         ))
-    
-  (setq org-agenda-files '("~/misc/memos/"))
+
+  (setq org-agenda-files '("~/misc/study-memos/org/"))
   ;; TODOリストに日付つきTODOを表示しない
   (setq org-agenda-todo-ignore-with-date t)
   ;; 今日から予定を表示させる
@@ -92,16 +92,16 @@
   (setq org-log-done 'time)
   :config
   (defun org-insert-upheading (arg)
-	(interactive "P")
-	(org-insert-heading arg)
-	(cond ((org-on-heading-p) (org-do-promote))
-		  ((org-at-item-p) (org-indent-item -1))))
+    (interactive "P")
+    (org-insert-heading arg)
+    (cond ((org-on-heading-p) (org-do-promote))
+          ((org-at-item-p) (org-indent-item -1))))
   (defun org-insert-heading-dwim (arg)
-	(interactive "p")
-	(case arg
-		  (4 (org-insert-subheading nil))
-		  (16 (org-insert-upheading nil))
-		  (t (org-insert-heading nil))))
+    (interactive "p")
+    (case arg
+          (4 (org-insert-subheading nil))
+          (16 (org-insert-upheading nil))
+          (t (org-insert-heading nil))))
   ;; (bind-key [M-return] 'org-insert-heading-dwim org-mode-map)
   (setq org-clock-into-drawer t)
   ;; (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l))) ;; set shortcut for tag
@@ -114,7 +114,7 @@
   (setq friday 5)
   (setq saturday 6)
   (defun my-diary-day-of-week (dow-list)
-	(memq (calendar-day-of-week date) dow-list))
+    (memq (calendar-day-of-week date) dow-list))
   )
 
 ;;; 20-org-mode.el ends here
