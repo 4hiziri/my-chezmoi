@@ -25,6 +25,10 @@ ebegin "APT update"
 sudo apt update && sudo apt upgrade -y
 eend $?
 
+ebegin "Install etckeeper"
+sudo apt install etckeeper
+eend $?
+
 DIR=$(mktemp -d)
 cd $DIR
 

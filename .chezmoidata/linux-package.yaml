@@ -31,3 +31,7 @@ packages:
       - zsh
       - vim
       - ncurses-term
+    work:
+      - mattermost-desktop
+      - libengine-pkcs11-openssl
+      - libnss3-tools
