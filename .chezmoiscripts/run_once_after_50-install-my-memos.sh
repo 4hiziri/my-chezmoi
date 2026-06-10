@@ -7,4 +7,4 @@ fi
 
 mkdir -p "$HOME/misc"
 cd "$HOME/misc"
-git clone 'https://github.com/4hiziri/study-memos'
+git clone 'git@github.com:4hiziri/study-memos'
