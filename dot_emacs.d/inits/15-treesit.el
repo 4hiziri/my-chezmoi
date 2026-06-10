@@ -251,15 +251,15 @@
         (message "treesit: %s is not installed: %s" (car lang) (cdr tlap))
         (my-treesit-install-language-grammar lang)))))
 
-(install-ts-lib (assoc 'dockerfile treesit-language-source-alist))
+;; (install-ts-lib (assoc 'dockerfile treesit-language-source-alist))
 
 
 (defun my-install-ts-lib (p lang)
   (interactive "P\nslib:")
   (install-ts-lib (assoc (make-symbol lang) treesit-language-source-alist)))
 
-;; (dolist (lang treesit-language-source-alist)
-;;   (install-ts-lib lang))
+(dolist (lang treesit-language-source-alist)
+  (install-ts-lib lang))
 
 (use-package treesit
   :ensure nil
