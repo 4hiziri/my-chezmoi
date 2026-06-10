@@ -33,3 +33,8 @@ packages:
       - ncurses-term
       - figlet
       - toilet
+    work:
+      - mattermost-desktop
+      - libengine-pkcs11-openssl
+      - libnss3-tools
+
