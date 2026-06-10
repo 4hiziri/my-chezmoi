@@ -226,21 +226,21 @@
 (use-package async
   :demand t)
 
-(defun my-treesit-install-all-parallel ()
-  (interactive)
-  (dolist (lang-elem treesit-language-source-alist)
-    (let ((lang (car lang-elem)))
-      (if (treesit-language-available-p lang)
-          (message "treesit: %s is installed" lang)
-        (message "treesit: build libtree-sitter-%s.so" lang)
-        (async-start
-         `(lambda ()
-            (let ((my-install-func (lambda (lang-elem)
-                                     ,(symbol-function 'my-treesit-install-language-grammar))))
-              (funcall my-install-func ',lang-elem)))
-         `(lambda (result)
-            (message "treesit: %s is installed" ',lang)))))))
-(my-treesit-install-all-parallel)
+;; (defun my-treesit-install-all-parallel ()
+;;   (interactive)
+;;   (dolist (lang-elem treesit-language-source-alist)
+;;     (let ((lang (car lang-elem)))
+;;       (if (treesit-language-available-p lang)
+;;           (message "treesit: %s is installed" lang)
+;;         (message "treesit: build libtree-sitter-%s.so" lang)
+;;         (async-start
+;;          `(lambda ()
+;;             (let ((my-install-func (lambda (lang-elem)
+;;                                      ,(symbol-function 'my-treesit-install-language-grammar))))
+;;               (funcall my-install-func ',lang-elem)))
+;;          `(lambda (result)
+;;             (message "treesit: %s is installed" ',lang)))))))
+;; (my-treesit-install-all-parallel)
 ;; :TODO node v20じゃないと駄目なのでチェック入れる、nvm.elでやるのが楽だけどnpmインストール馬鹿遅い
 
 (defun install-ts-lib (lang)
