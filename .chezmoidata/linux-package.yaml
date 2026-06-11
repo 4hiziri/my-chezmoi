@@ -40,6 +40,7 @@ packages:
       - thunderbird-locale-en
       - thunderbird-locale-ja
       - gnupg
+      - flatpak
     work:
       - mattermost-desktop
       - libengine-pkcs11-openssl

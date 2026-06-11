@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 
-ExecStart=%h/.local/share/aquaproj-aqua/pkgs/github_release/github.com/wachikun/yaskkserv2/0.1.7/yaskkserv2-0.1.7-x86_64-unknown-linux-gnu.tar.gz/yaskkserv2-0.1.7-x86_64-unknown-linux-gnu/yaskkserv2 --listen-address 127.0.0.1 --midashi-utf8 %h/.config/skk/SKK-JISYO.yaskkserv2 --google-cache-filename=/tmp/yaskkserv2.cache --no-daemonize
+ExecStart=%h/.local/share/mise/installs/cargo-wachikun-yaskkserv2/latest/bin/yaskkserv2 --listen-address 127.0.0.1 --midashi-utf8 %h/.config/skk/SKK-JISYO.yaskkserv2 --google-cache-filename=/tmp/yaskkserv2.cache --no-daemonize
 Restart=always
 
 [Install]
