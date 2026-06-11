@@ -5,7 +5,8 @@ sudo apt install -y {{ .packages.debian.apt | join " " }}
 
 {{ if stat (joinPath .chezmoi.homeDir ".work") -}}
 # for work script
-apt install -y {{ .packages.debian.work | join " "  }}
+
+sudo apt install -y {{ .packages.debian.work_apt | join " "  }}
 
 {{ end -}}
 

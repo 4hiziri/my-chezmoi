@@ -1,0 +1,13 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+flatpak install -y {{ .packages.debian.flatpak | join " " }}
+
+{{ if stat (joinPath .chezmoi.homeDir ".work") -}}
+
+# for work script
+flatpak install -y {{ .packages.debian.work_flatpak | join " "  }}
+
+{{ end -}}
+
+{{ end -}}

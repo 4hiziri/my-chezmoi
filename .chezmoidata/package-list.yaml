@@ -41,7 +41,7 @@ packages:
       - thunderbird-locale-ja
       - gnupg
       - flatpak
-    work:
+    work_apt:
       - mattermost-desktop
       - libengine-pkcs11-openssl
       - libnss3-tools
@@ -49,3 +49,8 @@ packages:
       - opensc-pkcs11
       - yubikey-manager
       - yubikey-personalization
+    flatpak:
+      - bitwarden
+      - md.obsidian.Obsidian
+    work_flatpak:
+      - enpass
