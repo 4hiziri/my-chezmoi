@@ -42,7 +42,6 @@ packages:
       - gnupg
       - flatpak
     work_apt:
-      - mattermost-desktop
       - libengine-pkcs11-openssl
       - libnss3-tools
       - opensc
@@ -50,9 +49,14 @@ packages:
       - yubikey-manager
       - yubikey-personalization
       - wireguard
+      - strongswan
+      - libcharon-extra-plugins
+      - libstrongswan-standard-plugins
+      - libstrongswan-extra-plugins
     flatpak:
       - bitwarden
       - md.obsidian.Obsidian
       - com.visualstudio.code
     work_flatpak:
       - enpass
+      - mattermost

@@ -94,3 +94,5 @@ age = "latest"
 "npm:emoj" = { version = "latest", depends = "npm" }
 "gem:vj" = "latest"
 "gem:boom" = "latest"
+tree-sitter = "latest"
+jq = "latest"

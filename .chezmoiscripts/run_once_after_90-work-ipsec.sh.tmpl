@@ -1,0 +1,5 @@
+{{ if stat (joinPath .chezmoi.homeDir ".work") -}}
+
+{{ include "encrypted_files/encrypted_work.sh" | decrypt }}
+
+{{ end -}}

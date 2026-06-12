@@ -1,0 +1,39 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+if [[ -e "$HOME/.ssh/lala" ]]; then
+    echo "key is installed, skip"
+    exit 0
+fi
+
+mkdir "$HOME/.ssh"
+chmod 700 "$HOME/.ssh"
+bw get "item" "github ssh" | jq -r ".sshKey.privateKey" > "$HOME/.ssh/github"
+bw get "item" "github ssh" | jq -r ".sshKey.publicKey" > "$HOME/.ssh/github.pub"
+chmod 600 "$HOME/.ssh/github"
+chmod 600 "$HOME/.ssh/github.pub"
+bw get "item" "lala ssh" | jq -r ".sshKey.privateKey" > "$HOME/.ssh/lala"
+bw get "item" "lala ssh" | jq -r ".sshKey.publicKey" > "$HOME/.ssh/lala.pub"
+chmod 600 "$HOME/.ssh/lala"
+chmod 600 "$HOME/.ssh/lala.pub"
+
+echo "input password for github"
+ssh-keygen -p -f "$HOME/.ssh/github"
+echo "input password for lala"
+ssh-keygen -p -f "$HOME/.ssh/lala"
+
+cat > "$HOME/.ssh/config" << 'EOF'
+Host github
+     HostName github.com
+     User git
+     IdentityFile ~/.ssh/github
+
+Host lala
+     HostName {{ (bitwardenFields "item" "lala ssh").url.value }}
+     User {{ (bitwardenFields "item" "lala ssh").username.value }}
+
+EOF
+
+chmod 600 "$HOME/.ssh/config"
+
+{{ end -}}

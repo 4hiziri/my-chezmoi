@@ -1,0 +1,4 @@
+.local/share/chezmoi/encrypted_files:
+  type: git-repo
+  private: true
+  url: git@github.com:4hiziri/encrypted_files

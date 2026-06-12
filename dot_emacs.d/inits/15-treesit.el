@@ -202,6 +202,8 @@
              (src-dir (nth 3 lang-elem))
              (pre-command (nth 4 lang-elem))
              (git-command (concat "git clone --depth 1 --single-branch " url " repo")))
+        (when (not (file-exists-p "~/.emacs.d/tree-sitter/"))
+          (mkdir "~/.emacs.d/tree-sitter/"))
         (message (format "create %s tree-sitter library" (car lang-elem)))
         (when branch
           (setq git-command (concat git-command " -b " branch)))
@@ -223,8 +225,8 @@
     (message "Need git, tree-sitter, npx and stable npm")))
 ;; check need npm install
 
-(use-package async
-  :demand t)
+;; (use-package async
+;;   :demand t)
 
 ;; (defun my-treesit-install-all-parallel ()
 ;;   (interactive)
@@ -252,7 +254,6 @@
         (my-treesit-install-language-grammar lang)))))
 
 ;; (install-ts-lib (assoc 'dockerfile treesit-language-source-alist))
-
 
 (defun my-install-ts-lib (p lang)
   (interactive "P\nslib:")
