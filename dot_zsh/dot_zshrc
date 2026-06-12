@@ -266,9 +266,6 @@ if command -v delta 2>&1 > /dev/null ; then
     git config --global merge.conflictStyle zdiff3
 fi
 
-## modern tree, broot
-source /home/tkgsy/.config/broot/launcher/bash/br
-
 ## search command alias
 
 if command -v s 2>&1 > /dev/null ; then
