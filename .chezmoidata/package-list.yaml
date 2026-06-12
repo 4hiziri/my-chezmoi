@@ -53,6 +53,7 @@ packages:
       - libcharon-extra-plugins
       - libstrongswan-standard-plugins
       - libstrongswan-extra-plugins
+      - pacrunner
     flatpak:
       - bitwarden
       - md.obsidian.Obsidian
