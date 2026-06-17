@@ -1,4 +1,4 @@
-packages:
+xclosxpackages:
   debian:
     apt:
       - fcitx5
