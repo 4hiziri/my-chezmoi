@@ -1,6 +1,8 @@
 packages:
   debian:
     apt:
+      - fcitx5
+      - fcitx5-skk
       - lolcat
       - htop
       - streamlink
