@@ -1,49 +1,50 @@
 packages:
   debian:
     apt:
-      - etckeeper
-      - fcitx5
-      - fcitx5-skk
-      - lolcat
-      - htop
-      - streamlink
-      - aria2
-      - yank
       - ack
-      - git-secret
-      - docker.io
-      - docker-compose-v2
-      - unar
       - apt-file
+      - aria2
       - build-essential
       - clamav
       - cmigemo
       - cowsay
+      - dict
       - dict-freedict-eng-jpn
       - dict-freedict-jpn-eng
-      - dict
-      - git
-      - jq
-      - nkf
-      - terminator
-      - wezterm-nightly
-      - tmux
-      - ufw
-      - virtualbox-7.2
-      - xclip
-      - zsh
-      - vim
-      - ncurses-term
+      - docker-compose-v2
+      - docker.io
+      - fcitx5
+      - fcitx5-skk
       - figlet
-      - toilet
       - firefox
       - firefox-locale-en
       - firefox-locale-ja
+      - flatpak
+      - gcc
+      - gdb
+      - git
+      - git-secret
+      - git-lfs
+      - gnupg
+      - htop
+      - lolcat
+      - ncurses-term
+      - nkf
+      - skktools
+      - streamlink
+      - terminator
       - thunderbird
       - thunderbird-locale-en
       - thunderbird-locale-ja
-      - gnupg
-      - flatpak
+      - toilet
+      - ufw
+      - unar
+      - vim
+      - virtualbox-7.2
+      - wezterm-nightly
+      - xclip
+      - yank
+      - zsh
     work_apt:
       - libengine-pkcs11-openssl
       - libnss3-tools
@@ -62,6 +63,8 @@ packages:
       - md.obsidian.Obsidian
       - com.visualstudio.code
       - todoist
+      - flatseal
+      - com.discordapp.Discord
     work_flatpak:
       - enpass
       - mattermost
