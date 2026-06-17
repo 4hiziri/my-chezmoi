@@ -10,8 +10,8 @@ xclosxpackages:
       - yank
       - ack
       - git-secret
-      - docker.io
-      - docker-compose-v2
+#      - docker.io
+#      - docker-compose-v2
       - unar
       - apt-file
       - build-essential
@@ -59,6 +59,7 @@ xclosxpackages:
       - bitwarden
       - md.obsidian.Obsidian
       - com.visualstudio.code
+      - todoist
     work_flatpak:
       - enpass
       - mattermost
