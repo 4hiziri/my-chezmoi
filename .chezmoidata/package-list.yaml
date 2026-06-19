@@ -45,6 +45,7 @@ packages:
       - xclip
       - yank
       - zsh
+      - fortune-mod
     work_apt:
       - libengine-pkcs11-openssl
       - libnss3-tools
@@ -65,6 +66,7 @@ packages:
       - todoist
       - flatseal
       - com.discordapp.Discord
+      - rustdesk
     work_flatpak:
       - enpass
       - mattermost

@@ -22,18 +22,4 @@ ssh-keygen -p -f "$HOME/.ssh/github"
 echo "input password for lala"
 ssh-keygen -p -f "$HOME/.ssh/lala"
 
-cat > "$HOME/.ssh/config" << 'EOF'
-Host github
-     HostName github.com
-     User git
-     IdentityFile ~/.ssh/github
-
-Host lala
-     HostName {{ (bitwardenFields "item" "lala ssh").url.value }}
-     User {{ (bitwardenFields "item" "lala ssh").username.value }}
-
-EOF
-
-chmod 600 "$HOME/.ssh/config"
-
 {{ end -}}

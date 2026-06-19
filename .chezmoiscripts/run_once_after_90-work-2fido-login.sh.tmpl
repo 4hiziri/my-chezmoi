@@ -1,0 +1,14 @@
+{{ if stat (joinPath .chezmoi.homeDir ".work") -}}
+#!/bin/bash
+
+if [[ -e "/etc/Yubico/u2f_keys" ]]; then
+    echo "u2f_keys exists, skip"
+    exit 0
+fi
+
+sudo mkdir -p "/etc/Yubico" > /dev/null
+echo "Enter PIN and touch Yubikey"
+pamu2fcfg | sudo tee /etc/Yubico/u2f_keys > /dev/null
+echo 'auth requisite pam_u2f.so authfile=/etc/Yubico/2uf_keys cue' | sudo tee /etc/pam.d/u2f-requisite
+
+{{ end -}}
