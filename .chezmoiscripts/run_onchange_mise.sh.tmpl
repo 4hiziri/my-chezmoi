@@ -1,0 +1,8 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+# hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+
+mise install -C "$HOME"
+
+{{ end -}}
