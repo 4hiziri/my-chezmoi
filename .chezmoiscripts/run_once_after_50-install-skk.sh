@@ -13,7 +13,7 @@ mkdir -p "$HOME/src"
 cd "$HOME/src"
 git clone "https://github.com/skk-dev/dict"
 cd dict
-for JISYO in $(ls -1 | grep "SKK-JISYO.*"); do
+for JISYO in $(find . -name "SKK-JISYO.*"); do
     nkf --ic=e --oc=w8 -O $JISYO "$JISYO.utf-8"
 done
 cd "$HOME/src"

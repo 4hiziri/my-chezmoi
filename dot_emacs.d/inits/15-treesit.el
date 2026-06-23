@@ -18,6 +18,7 @@
                 (message (shell-command-to-string "npm install"))))
         (css "https://github.com/tree-sitter/tree-sitter-css")
         (clojure "https://github.com/sogaiu/tree-sitter-clojure")
+        (cooklang "https://github.com/addcninblue/tree-sitter-cooklang")
         (cylc "https://github.com/elliotfontaine/tree-sitter-cylc")
         (dart "https://github.com/UserNobody14/tree-sitter-dart")
         (doxygen "https://github.com/tree-sitter-grammars/tree-sitter-doxygen")
