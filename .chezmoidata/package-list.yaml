@@ -67,6 +67,11 @@ packages:
       - flatseal
       - com.discordapp.Discord
       - rustdesk
+      - com.google.Chrome
     work_flatpak:
       - enpass
       - mattermost
+    sec:
+      - wireshark
+      - nmap
+      - binutils

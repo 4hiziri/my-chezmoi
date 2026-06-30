@@ -10,4 +10,11 @@ sudo apt install -y {{ .packages.debian.work_apt | join " "  }}
 
 {{ end -}}
 
+{{ if stat (joinPath .chezmoi.homeDir ".sec") -}}
+# for secrity software install
+
+sudo apt install -y {{ .packages.debian.sec | join " "  }}
+
+{{ end -}}
+
 {{ end -}}
