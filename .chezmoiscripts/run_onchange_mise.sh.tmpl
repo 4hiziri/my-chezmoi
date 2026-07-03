@@ -3,6 +3,6 @@
 
 # hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
 
-mise install -C "$HOME"
+mise install -C "{{ .chezmoi.homeDir }}"
 
 {{ end -}}
