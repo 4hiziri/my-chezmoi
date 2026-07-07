@@ -68,6 +68,7 @@ packages:
       - com.discordapp.Discord
       - rustdesk
       - com.google.Chrome
+      - opencode
     work_flatpak:
       - enpass
       - mattermost

@@ -1,0 +1,11 @@
+{{ if stat (joinPath .chezmoi.homeDir ".work") -}}
+#!/bin/bash
+
+if [[ -e ~/.local/bin/claude ]]; then
+    echo "claude code installed, skip"
+    exit 0
+fi
+
+curl -fsSL https://claude.ai/install.sh | bash
+
+{{ end -}}

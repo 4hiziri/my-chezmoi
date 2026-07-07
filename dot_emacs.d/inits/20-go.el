@@ -21,10 +21,10 @@
 ;; Goのパスを通す
 (when (file-exists-p (expand-file-name "$HOME/.go/bin"))
   (add-to-list 'exec-path
-			   (cl-concatenate 'string
-							   (string-trim-right
-								(shell-command-to-string "go env GOROOT"))
-							   "/bin")))
+               (cl-concatenate 'string
+                               (string-trim-right
+                                (shell-command-to-string "go env GOROOT"))
+                               "/bin")))
 
 
 ;; 必要なパッケージのロード
@@ -34,23 +34,22 @@
   (add-hook 'go-mode-hook 'company-mode)
   (add-hook 'go-mode-hook 'flycheck-mode)
   (add-hook 'go-mode-hook (lambda ()
-			    (set (make-local-variable 'company-backends) '(company-go))
-			    (company-mode))))
+                (set (make-local-variable 'company-backends) '(company-go))
+                (company-mode))))
 
 (use-package go-mode
   :defer t
   :init
   (add-hook 'go-mode-hook (lambda ()
-			    ;; FIXME: need this?
-			    (setq indent-tabs-mode t)
-			    (setq tab-width 4)
-			    (smartparens-mode)
-			    (add-hook 'before-save-hook 'gofmt-before-save)))
+                ;; FIXME: need this?
+                (setq indent-tabs-mode t)
+                (setq tab-width 4)
+                (add-hook 'before-save-hook 'gofmt-before-save)))
   :bind (:map go-mode-map
-			  ("M-." . godef-jump)
-			  ("C-c C-r" . go-remove-unused-import)
-			  ("C-c i" . go-goto-imports)
-			  ("C-c d" . godoc))
+              ("M-." . godef-jump)
+              ("C-c C-r" . go-remove-unused-import)
+              ("C-c i" . go-goto-imports)
+              ("C-c d" . godoc))
   :config
   (add-hook 'before-save-hook #'gofmt-before-save)
   ;; (local-set-key (kbd "M-.") 'godef-jump) ;; TODO: overwritten, change or delete
