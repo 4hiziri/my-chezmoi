@@ -9,7 +9,10 @@ config.scrollback_lines = 100000
 config.window_background_opacity = 0.75
 config.text_background_opacity = 0.5
 
-config.color_scheme = "Dracula (Official)"
+-- config.color_scheme = 'Tango Adapted'
+-- config.color_scheme = 'terafox'
+config.color_scheme = 'Thayer Bright'
+
 -- 背景色（グラデーション）
 config.window_background_gradient = {
     colors = {"#F740D3", "#94D1EB", "#8D11A6"},

@@ -29,7 +29,7 @@
 (setq echo-keystrokes 0.1)
 
 ;; help -> backspace
-(define-key key-translation-map [?\C-h] [?\C-?])
+;; (define-key key-translation-map [?\C-h] [?\C-?]) ; puniのキーバインドに干渉するので削除
 
 ;;ffap
 (ffap-bindings)
@@ -50,13 +50,7 @@
 (defvar uniquify-ignore-buffers-re "*[^*]+*")
 (defvar uniquify-buffer-name-style 'post-forward-angle-brackets)
 
-(if (version<= "26.0.50" emacs-version)
-    (global-display-line-numbers-mode)
-  (use-package linum
-    :demand t
-    :config
-    (global-linum-mode)
-    (setq linum-format "%03d |")))
+(global-display-line-numbers-mode 1)
 
 (use-package w3m
   :defer t

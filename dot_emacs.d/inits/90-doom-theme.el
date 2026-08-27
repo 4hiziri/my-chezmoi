@@ -6,7 +6,10 @@
   :custom-face
   (doom-modeline-bar ((t (:background "#6272a4"))))
   :config
-  (load-theme 'doom-dracula t)
+  (load-theme 'doom-monokai-pro t)
+  (custom-set-faces
+   '(font-lock-comment-face ((t (:foreground "#9f9f9f"))))
+   '(font-lock-comment-delimiter-face ((t (:foreground "#9f9f9f")))))
   (doom-themes-neotree-config)
   (doom-themes-org-config))
 
@@ -56,5 +59,5 @@
   ;; parrot-mode保留、true/false、on/offなどのトグルができるモード
   ;; compilation保留、バックグラウンドでのテストやビルドの状態を表示
   (doom-modeline-def-modeline 'main
-	'(bar workspace-name window-number matches buffer-info remote-host buffer-position selection-info buffer-encoding misc-info)
-	'(time misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs battery)))
+    '(bar workspace-name window-number matches buffer-info remote-host buffer-position selection-info buffer-encoding misc-info)
+    '(time misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs battery)))

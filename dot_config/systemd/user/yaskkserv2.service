@@ -4,8 +4,12 @@ After=network.target
 
 [Service]
 
+Type=simple
 ExecStart=%h/.local/share/mise/installs/cargo-wachikun-yaskkserv2/latest/bin/yaskkserv2 --listen-address 127.0.0.1 --midashi-utf8 %h/.config/skk/SKK-JISYO.yaskkserv2 --google-cache-filename=/tmp/yaskkserv2.cache --no-daemonize
 Restart=always
+StandardOutput=journal
+StandardError=journal
+
 
 [Install]
 WantedBy=default.target

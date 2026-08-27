@@ -26,17 +26,6 @@
                                 (shell-command-to-string "go env GOROOT"))
                                "/bin")))
 
-
-;; 必要なパッケージのロード
-(use-package company-go
-  :defer t
-  :init
-  (add-hook 'go-mode-hook 'company-mode)
-  (add-hook 'go-mode-hook 'flycheck-mode)
-  (add-hook 'go-mode-hook (lambda ()
-                (set (make-local-variable 'company-backends) '(company-go))
-                (company-mode))))
-
 (use-package go-mode
   :defer t
   :init

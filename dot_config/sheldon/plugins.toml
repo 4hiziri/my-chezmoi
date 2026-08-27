@@ -31,18 +31,6 @@ github = "zsh-users/zsh-completions"
 [plugins.zsh-history-substring-search]
 github = "zsh-users/zsh-history-substring-search"
 
-[plugins.zsh-syntax-highlighting]
-github = "zsh-users/zsh-syntax-highlighting"
-
-[plugins.zsh-colors]
-github = "Tarrasch/zsh-colors"
-
-[plugins.zsh-256color]
-github = "chrissicool/zsh-256color"
-
-[plugins.dircolors-solarized]
-github = "seebi/dircolors-solarized"
-
 [plugins.zsh-notify]
 github = "marzocchi/zsh-notify"
 
@@ -61,14 +49,30 @@ apply  = ["PATH"]
 [plugins.zsh-dwim]
 github = "oknowton/zsh-dwim"
 
-[plugins.dracula-theme]
-github = "dracula/zsh-syntax-highlighting"
-
 [plugins.ansiweather]
 github = "fcambus/ansiweather"
 
+[plugins.zsh-colors]
+github = "zpm-zsh/colors"
+
 [plugins.colorize]
 github = "zpm-zsh/colorize"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+# [plugins.dracula-theme]
+# github = "dracula/zsh-syntax-highlighting"
+
+
+[plugins.zsh-colors2]
+github = "Tarrasch/zsh-colors"
+
+[plugins.zsh-256color]
+github = "chrissicool/zsh-256color"
+
+[plugins.dircolors-solarized]
+github = "seebi/dircolors-solarized"
 
 [plugins.zsh-command-not-found]
 github = "Freed-Wu/zsh-command-not-found"
@@ -121,9 +125,6 @@ github = "lgdevlop/zsh-smart-insert"
 
 [plugins.zsh-shellcolor]
 github = "SaltedBlowfish/zsh-shellcolor"
-
-[plugins.zsh-syntax-highlightigng-dracula]
-github = "dracula/zsh-syntax-highlighting"
 
 [plugins.docker-aliases]
 github = "webyneter/docker-aliases"
