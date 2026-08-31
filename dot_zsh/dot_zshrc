@@ -105,6 +105,7 @@ alias -g L='| less'
 alias -g G='| grep'
 alias -g C='| xclip -i -selection clipboard'
 alias python='python3'
+alias ssh="TERM=xterm-256color ssh"
 
 bindkey '^o' autosuggest-accept
 
