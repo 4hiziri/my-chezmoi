@@ -84,6 +84,7 @@ age = "latest"
 "pipx:marker" = { version = "latest", depends = "uv" }
 "pipx:pdd" = { version = "latest", depends = "uv" }
 "pipx:pywal" = { version = "latest", depends = "uv" }
+"pipx:python-lsp-server" = { version = "latest", depends = "uv" }
 "npm:prettier" = { version = "latest", depends = "npm" }
 "npm:bible" = { version = "latest", depends = "npm" }
 "npm:birthday" = { version = "latest", depends = "npm" }
@@ -99,3 +100,6 @@ jq = "latest"
 imagemagick = "latest"
 sops = "latest"
 task = "latest"
+aws-cli = { version = "latest", symlink_bins = "true" }
+azure = { version = "latest", uvx_args = "--prerelease=allow" }
+terraform = "latest"
