@@ -103,3 +103,4 @@ task = "latest"
 aws-cli = { version = "latest", symlink_bins = "true" }
 azure = { version = "latest", uvx_args = "--prerelease=allow" }
 terraform = "latest"
+ansible = { version = "latest", pipx_args = "--include-deps", uvx = false }
